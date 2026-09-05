@@ -1,0 +1,4 @@
+streamlit
+huggingface_hub
+pypdf
+scikit-learn
