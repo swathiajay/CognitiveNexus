@@ -214,3 +214,21 @@ Final Output
 ```
 
 ## 📸 Screenshots
+
+### Main Interface
+![Main Interface](screenshots/01-main-interface.png)
+
+### RAG PDF Response
+![RAG PDF Response](screenshots/02-rag-pdf-response.png)
+
+### Source and Evaluation
+![Source and Evaluation](screenshots/03-source-and-evaluation.png)
+
+### Smart Prompt Engineering
+![Smart Prompt Engineering](screenshots/04-smart-prompt-engineering.png)
+
+### Personalized Study Quiz
+![Personalized Study Quiz](screenshots/05-personalized-study-quiz.png)
+
+### Creative Mode
+![Creative Mode](screenshots/06-creative-mode.png)
