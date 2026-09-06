@@ -1,124 +1,187 @@
 # 🧠 CognitiveNexus
 
-## AI-Powered Knowledge & Productivity Assistant
+## 📌 Project Overview
 
-CognitiveNexus is a Streamlit-based AI application designed to provide context-aware assistance for research, study, analysis, content creation, creative tasks, and general conversations.
+CognitiveNexus is an AI-powered knowledge and productivity assistant built using Python and Streamlit.
 
-The system combines Smart Prompt Engineering, Conversation Memory, RAG-based PDF Knowledge Assistance, Source Support, Response Evaluation, and Personalized Study Mode into one unified AI workspace.
+The system adapts its prompts according to the user's task, maintains conversational context, retrieves relevant information from uploaded PDF documents, and evaluates generated responses.
 
 ---
 
 ## 🎯 Objectives
 
-- Provide multiple AI assistance modes in one application.
-- Automatically optimize prompts according to the user's task.
-- Maintain conversation context during the active session.
-- Allow users to ask questions from uploaded PDF documents.
-- Provide source/page information for document-based answers.
-- Evaluate generated responses using multiple quality criteria.
-- Support personalized learning activities for students.
+- Provide a multi-purpose AI assistant for different user tasks.
+- Implement Smart Prompt Engineering.
+- Support task-specific AI responses.
+- Provide PDF-based knowledge retrieval using RAG.
+- Maintain conversation context during an active session.
+- Provide response evaluation.
+- Provide personalized study assistance.
 
 ---
 
 ## ✨ Key Features
 
-### 🧠 1. Conversation Memory
+### 1. Smart Prompt Engineering
 
-CognitiveNexus maintains conversation history during the active Streamlit session so that follow-up questions can use previous context.
+- Detects the user's task.
+- Selects an appropriate AI mode.
+- Optimizes the prompt according to the task.
+- Creates a structured prompt before sending it to the AI model.
 
-The memory is session-based and is maintained while the active application session continues.
+### 2. Six AI Modes
 
----
+- 🔎 Research
+- 📚 Study
+- 📊 Analysis
+- ✍️ Content
+- 🎨 Creative
+- 💬 General Chat
 
-### 📄 2. RAG Knowledge Assistant
+### 3. Personalized Study Mode
 
-Users can upload a PDF and ask questions about its content.
+Study Mode supports:
 
-The system:
-
-1. Extracts text from the PDF.
-2. Splits the text into smaller chunks.
-3. Converts the text into TF-IDF vectors.
-4. Uses cosine similarity to identify relevant chunks.
-5. Provides the retrieved information as context to the AI model.
-6. Generates an answer based on the retrieved document information.
-
-This helps the application provide document-grounded answers.
-
----
-
-### ⚙️ 3. Task-Specific Prompt Optimization
-
-CognitiveNexus detects the user's intended task and adapts the prompt structure accordingly.
-
-Supported task types include:
-
+- Auto Detect
 - Explanation
 - Summary
 - Quiz
 - Flashcards
 - Learning Plan
-- Comparison
-- Analysis
-- Email
-- Social Media Post
-- Article
-- Story
-- Brainstorming
-- General
 
-This allows the same AI model to produce different response structures depending on the user's goal.
+### 4. RAG Knowledge Assistant
 
----
+- Upload PDF documents.
+- Extract text from PDFs.
+- Divide documents into smaller chunks.
+- Retrieve relevant chunks using TF-IDF and cosine similarity.
+- Use retrieved content as context for AI responses.
+- Display source/page information when available.
 
-### 📌 4. Source Support
+### 5. Conversation Memory
 
-When a response uses information retrieved from an uploaded PDF, CognitiveNexus displays the relevant PDF page number.
+- Maintains previous messages during the active Streamlit session.
+- Uses conversation history as context for subsequent questions.
 
-This gives users a simple way to identify the source location of document-based information.
+### 6. Response Evaluation
 
----
-
-### 📊 5. Response Evaluation
-
-Generated responses are evaluated using multiple quality criteria:
+Generated responses are evaluated using:
 
 - Relevance
 - Completeness
 - Accuracy
-- Hallucination Safety
+- Hallucination Risk
 - Overall Score
 
-An evaluation summary is also displayed to help users understand the quality of the generated response.
+### 7. Source Support
 
----
+When PDF retrieval is used, the application provides retrieved source/page information where available.
 
-### 🎓 6. Personalized Study Mode
+### 8. Task-Specific Prompt Optimization
 
-Study Mode provides different learning activities for students:
-
-- Explanation
-- Summary
-- Quiz
-- Flashcards
-- Learning Plan
-
-This allows students to use CognitiveNexus for learning, revision, practice, and study planning.
+Different tasks receive different prompt structures so that the AI response can be adapted to the user's selected task.
 
 ---
 
 ## 🤖 AI Modes
 
-CognitiveNexus provides six main AI modes:
-
 | Mode | Purpose |
-|------|---------|
-| Research | Structured research-oriented responses |
-| Study | Learning and revision assistance |
-| Analysis | Logical analysis and comparison |
-| Content | Professional content generation |
-| Creative | Stories and creative ideas |
+|---|---|
+| Research | Information research and explanation |
+| Study | Learning and educational assistance |
+| Analysis | Analysis, comparison, advantages and disadvantages |
+| Content | Content creation and writing assistance |
+| Creative | Creative ideas and responses |
 | General Chat | General-purpose conversation |
+
+---
+
+## 📚 Personalized Study Mode
+
+The Study Mode provides different learning options:
+
+| Study Option | Purpose |
+|---|---|
+| Auto Detect | Automatically identifies the study task |
+| Explanation | Explains a topic clearly |
+| Summary | Provides concise summaries |
+| Quiz | Generates practice questions |
+| Flashcards | Creates question-and-answer flashcards |
+| Learning Plan | Creates a structured learning plan |
+
+---
+
+## 🧩 Smart Prompt Engineering
+
+CognitiveNexus uses a Smart Prompt Engineering layer to improve task-specific responses.
+
+The process includes:
+
+1. User Input
+2. Mode Selection
+3. Task Detection
+4. Prompt Optimization
+5. Structured Prompt Creation
+6. AI Model Inference
+7. Response Processing
+
+This allows the system to adapt the prompt structure according to the user's task.
+
+---
+
+## 📄 RAG Knowledge Assistant
+
+The RAG component allows users to ask questions based on uploaded PDF documents.
+
+### RAG Pipeline
+
+1. Upload PDF
+2. Extract PDF text
+3. Split text into chunks
+4. Convert text into TF-IDF vectors
+5. Calculate cosine similarity
+6. Retrieve relevant chunks
+7. Provide retrieved content as context
+8. Generate the AI response
+9. Display source/page information
+
+The implementation uses PyPDF for PDF text extraction and Scikit-learn for TF-IDF and cosine similarity retrieval.
+
+---
+
+## 🧠 Conversation Memory
+
+CognitiveNexus maintains conversation history using Streamlit session state.
+
+This allows the assistant to use previous messages as context during the active session.
+
+> Note: Conversation memory is session-based and is not permanent across separate sessions.
+
+---
+
+## 📑 Source Support
+
+For PDF-based questions, CognitiveNexus retrieves relevant document chunks and provides source/page information where available.
+
+This helps users understand which part of the uploaded document was used as supporting context.
+
+---
+
+## 📊 Response Evaluation
+
+CognitiveNexus includes a response evaluation component.
+
+Each generated response can be evaluated using:
+
+- **Relevance**
+- **Completeness**
+- **Accuracy**
+- **Hallucination Risk**
+- **Overall Score**
+
+The evaluation provides an additional assessment of the generated response.
+
+> Evaluation scores are model-generated estimates and should not be treated as guaranteed ground truth.
 
 ---
 
@@ -126,47 +189,28 @@ CognitiveNexus provides six main AI modes:
 
 ```text
 User Input
-     ↓
+    ↓
 Mode Selection
-     ↓
+    ↓
 Task Detection
-     ↓
+    ↓
 Smart Prompt Optimization
-     ↓
+    ↓
 Conversation Memory
-     ↓
+    ↓
 PDF Retrieval (when available)
-     ↓
+    ↓
 Structured Prompt
-     ↓
+    ↓
 Hugging Face Inference API
-     ↓
+    ↓
 AI Response
-     ↓
+    ↓
 Source Support
-     ↓
+    ↓
 Response Evaluation
-     ↓
+    ↓
 Final Output
-
----
+```
 
 ## 📸 Screenshots
-
-### 1. Main Interface
-![Main Interface](screenshots/01-main-interface.png)
-
-### 2. RAG Knowledge Assistant
-![RAG Knowledge Assistant](screenshots/02-rag-pdf-response.png)
-
-### 3. Source Support & Response Evaluation
-![Source Support and Response Evaluation](screenshots/03-source-and-evaluation.png)
-
-### 4. Smart Prompt Engineering
-![Smart Prompt Engineering](screenshots/04-smart-prompt-engineering.png)
-
-### 5. Personalized Study Mode
-![Personalized Study Quiz](screenshots/05-personalized-study-quiz.png)
-
-### 6. Creative Mode
-![Creative Mode](screenshots/06-creative-mode.png)
