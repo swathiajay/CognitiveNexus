@@ -148,3 +148,25 @@ Source Support
 Response Evaluation
      ↓
 Final Output
+
+---
+
+## 📸 Screenshots
+
+### 1. Main Interface
+![Main Interface](screenshots/01-main-interface.png)
+
+### 2. RAG Knowledge Assistant
+![RAG Knowledge Assistant](screenshots/02-rag-pdf-response.png)
+
+### 3. Source Support & Response Evaluation
+![Source Support and Response Evaluation](screenshots/03-source-and-evaluation.png)
+
+### 4. Smart Prompt Engineering
+![Smart Prompt Engineering](screenshots/04-smart-prompt-engineering.png)
+
+### 5. Personalized Study Mode
+![Personalized Study Quiz](screenshots/05-personalized-study-quiz.png)
+
+### 6. Creative Mode
+![Creative Mode](screenshots/06-creative-mode.png)
